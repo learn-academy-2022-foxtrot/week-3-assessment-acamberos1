@@ -26,31 +26,42 @@
 // try function above constant
 // same error occured but then I revise syntax.
 // originally i put array.filter but it wasnt counted as a function according to error so I tried const name and attached to filter
-
+const fibLength1 = 6
+const fibLength2 = 10
 describe("returnLarger", () => {
-  it("takes in a number then returns an array.", () => {
-    const fibLength1 = 6
-    const fibLength2 = 10
+  it("takes in a number then returns an array.", () =>{
+  
 
-    // Expected output: [1, 1, 2, 3, 5, 8]
-    // Expected output: [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
-    expect(returnLarger(fibLength1)).toEqual[1, 1, 2, 3, 5, 8]
-    expect(returnLarger(fibLength2)).toEqual[1, 1, 2, 3, 5, 8, 13, 21, 32, 34, 55]
+// Expected output: [1, 1, 2, 3, 5, 8]
+let  returnLarger = (arr, num) => {
+  let emptyArr = [1, 1 ]
+}
+//}
+  
+
+  
+
+// Expected output: [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
+expect(returnLarger(fibLength1)).toEqual[1,1,2,3,5,8]
+expect(returnLarger(fibLength2)).toEqual[1,1,2,3,5,8,13,21,32,34,55]
   })
 })
-// let  returnLarger2 = (arr, num) => fibLength2.filter(fibLength2 => 10 > num); {
+
+ // let  returnLarger2 = (arr, num) => fibLength2.filter(fibLength2 => 10 > num); {
 // } this is from past attempt 
 
 
 // b) Create the function that makes the test pass.
+// return larger function that name came from describe
+// has empty array to already have  1 ,1 and calculate and accumalate based on incoming number
 const returnLarger = (num) => {
-  let emptyArr = [1,1]
-  for (i = 2; i < num; i++) {
-    emptyArr.push(emptyArr[i-2] + emptyArr[i-1])
+      let emptyArr = [1,1]
+     for (i = 2; i < num; i++) {
+       emptyArr.push(emptyArr[i-2] + emptyArr[i-1])
+     }
+     return emptyArr
   }
-  return emptyArr
-  }
-  
+
 
 
 // --------------------2) Create a function that takes in an object and returns an array of the numbers sorted from least to greatest.
@@ -62,45 +73,41 @@ const returnLarger = (num) => {
 // use console log that spits out output as if it was manually entered first
 // put expect statements under objects to expect the function and also the expected outcome listed
 
-describe("days", () => {
+describe("leastToGreatest", () => {
   it("sorts object values least to greatest.", () => {
+  
+const studyMinutesWeek1 = {
+  sunday: 90,
+  monday: 30,
+  tuesday: 20,
+  wednesday: 15,
+  thursday: 30,
+  friday: 15,
+  saturday: 60
+}
 
-    const studyMinutesWeek1 = {
-      sunday: 90,
-      monday: 30,
-      tuesday: 20,
-      wednesday: 15,
-      thursday: 30,
-      friday: 15,
-      saturday: 60
-    }
+// Expected output: [15, 15, 20, 30, 30, 60, 90]
 
-    // Expected output: [15, 15, 20, 30, 30, 60, 90]
-
-    const studyMinutesWeek2 = {
-      sunday: 100,
-      monday: 10,
-      tuesday: 45,
-      wednesday: 60,
-      thursday: 20,
-      friday: 15,
-      saturday: 65
-    }
-    expect(leastToGreatest(studyMinutesWeek1)).toEqual[15, 15, 20, 30, 30, 60, 90]
-    expect(leastToGreatest(studyMinutesWeek2)).toEqual[10, 15, 20, 45, 60, 65]
-  })
+const studyMinutesWeek2 = {
+  sunday: 100,
+  monday: 10,
+  tuesday: 45,
+  wednesday: 60,
+  thursday: 20,
+  friday: 15,
+  saturday: 65
+}
+expect(leastToGreatest(studyMinutesWeek1)).toEqual[15, 15, 20, 30, 30, 60, 90]
+expect(leastToGreatest(studyMinutesWeek2)).toEqual[10,15,20,45,60,65]
+})
 })
 
 
-
+  
 // Expected output: [10, 15, 20, 45, 60, 65, 100]
 
+
 // b) Create the function that makes the test pass.
-let leastToGreatest = (object)  => {
-  return object.sort((a,b ) => a - b);
-  
-  
-}
 
 // --------------------3) Create a function that takes in an array and returns an array of the accumulating sum. An empty array should return an empty array.
 
@@ -114,23 +121,36 @@ let leastToGreatest = (object)  => {
 // expect statement won't accept an empty square bracket without error
 // im gonna try making a cont that equals an empty array then just call that into the expect statement
 describe("sumUp", () => {
-  it(" sums up the total amount in the array", () => {
+  it (" sums up the total amount in the array", () => {
 
     let emptyArr = []
 
-    const accountTransactions1 = [100, -17, -23, -9]
+const accountTransactions1 = [100, -17, -23, -9]
 
-    // Expected output: [100, 83, 60, 51]
-    expect(sumUp(accountTransactions1)).toEqual[100, 83, 60, 51]
+// Expected output: [100, 83, 60, 51]
+expect(sumUp(accountTransactions1)).toEqual[100, 83, 60, 51]
 
-    const accountTransactions2 = [250, -89, 100, -96]
-    // Expected output: [250, 161, 261, 165]
-    expect(sumUp(accountTransactions2)).toEqual[250, 161, 261, 165]
+const accountTransactions2 = [250, -89, 100, -96]
+// Expected output: [250, 161, 261, 165]
+expect(sumUp(accountTransactions2)).toEqual[250, 161, 261, 165]
 
-    const accountTransactions3 = []
-    // Expected output: []
-    expect(sumUp(accountTransactions3)).toEqual[emptyArr]
-  })
+const accountTransactions3 = []
+// Expected output: []
+expect(sumUp(accountTransactions3)).toEqual[emptyArr]
+})
 })
 
+
 // b) Create the function that makes the test pass.
+// this function makes new array and has var that is 0
+// the fopr loop will iterate the array while also pushing the sum which is the accumulation of numbers into a new array then return it
+let sumUp = (array) => {
+  let sum = 0
+  const inputArray = []
+  for (i=0; i < array.length; i++) {
+    sum = sum + array[i]
+    emptyArr.push(sum)
+  }
+return emptyArr
+
+}
