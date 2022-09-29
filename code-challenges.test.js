@@ -86,7 +86,7 @@ const studyMinutesWeek1 = {
   saturday: 60
 }
 
-// Expected output: [15, 15, 20, 30, 30, 60, 90]
+
 
 const studyMinutesWeek2 = {
   sunday: 100,
@@ -102,12 +102,17 @@ expect(leastToGreatest(studyMinutesWeek2)).toEqual[10,15,20,45,60,65]
 })
 })
 
-
-  
 // Expected output: [10, 15, 20, 45, 60, 65, 100]
-
+// Expected output: [15, 15, 20, 30, 30, 60, 90]
 
 // b) Create the function that makes the test pass.
+// new function will correspond with describe function and do as it is named and return the expected result
+//empty array will bring in object values and sort it
+
+const leastToGreatest = (Object) => {
+emptyArr = Object.values(Object).sort((a,b) => a - b);
+return emptyArr
+}
 
 // --------------------3) Create a function that takes in an array and returns an array of the accumulating sum. An empty array should return an empty array.
 
